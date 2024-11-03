@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2021",
+    "target": "es6",
     "module": "commonjs",
     "lib": ["dom", "esnext"],
+    "types": ["node"],  // 移除 "@mui/material"
     "allowJs": true,
     "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
@@ -12,6 +15,15 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["src"]
 }

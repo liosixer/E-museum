@@ -13,6 +13,9 @@ const config: Configuration = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     mainFields: ["main", "module", "browser"],
+    alias: {
+      "@": path.resolve(rootPath, "src"),
+    },
   },
   entry: path.resolve(rootPath, "src/renderer", "index.tsx"),
   target: "electron-renderer",
